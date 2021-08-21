@@ -6,10 +6,16 @@
   font-size: 15px;
 }
 
-.container2 img{
+.container2 img {
   width: 15%;
   height: 5%;
-  border: 1px solid #c50f0f;;
+  border: 1px solid #c50f0f;
+}
+
+.deuruim {
+  display: block;
+  width: 100%;
+  margin: auto;
 }
 
 body {
@@ -40,6 +46,7 @@ h1 {
   padding-inline-start: 0;
   padding: 400px;
   padding-top: 25px;
+  padding-bottom:25px;
 }
 
 .card {
@@ -67,9 +74,7 @@ h1 {
 }
 
 .ghost {
-
   background-color: grey;
-
 }
 
 .steel {
@@ -100,10 +105,8 @@ h1 {
   background-color: #f4e7da;
 }
 
-.dark{
-
+.dark {
   background-color: rgb(121, 51, 172);
-
 }
 
 .rock {
@@ -144,7 +147,7 @@ h1 {
 
 .card:hover {
   animation: bounce 0.5s linear;
-} 
+}
 
 .card-title {
   text-transform: capitalize;
@@ -168,16 +171,24 @@ h1 {
   position: relative;
   z-index: 2;
 }
-.ui.button {
 
-  display:block;
-  margin-left: 960px;
-  color:white;
-  background:red;
-
-
+.ui.input {
+  margin: auto;
+  display: block;
 }
 
+.ui.input > input {
+  display: block;
+  margin: auto;
+  border: 1px solid gray;
+}
+
+.ui.button {
+  display: block;
+  margin: auto;
+  color: white;
+  background: red;
+}
 
 @keyframes bounce {
   20% {
