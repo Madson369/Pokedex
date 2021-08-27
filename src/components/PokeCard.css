@@ -187,7 +187,24 @@ h1 {
   display: block;
   margin: auto;
   color: white;
-  background: red;
+}
+
+.buttoncontainer{
+
+  display:flex;
+  flex-direction: row;
+  padding-top:10px;
+  padding-left:300px;
+  
+
+
+}
+.item.ui.button {
+
+  order: 5;
+  margin-left: 5px; 
+  margin-right: 5px;
+
 }
 
 @keyframes bounce {

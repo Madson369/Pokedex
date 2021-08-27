@@ -5,7 +5,7 @@ function Gerarhtml(pokemonlistog) {
     let pokemonlist = []
  pokemonlist = [...pokemonlistog]
 
- console.log(pokemonlist)
+ //console.log(pokemonlist)
  
 
 

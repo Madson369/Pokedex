@@ -1,4 +1,5 @@
 import "./PokeCard.css";
+import { Button, Input } from "semantic-ui-react";
 
 function PokeCard(props) {
   return (
@@ -12,6 +13,7 @@ function PokeCard(props) {
         {props.id}. {props.name}
       </h2>
       <p className="card-subtitle">{props.types.join(" | ")}</p>
+      <Button color='blue' >Status</Button>
     </li>
   );
 }
