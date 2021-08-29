@@ -1,9 +1,16 @@
 import "./PokeCard.css";
 import { Button, Input } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
 
 function PokeCard(props) {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push(`/sobre/${props.id}`);
+  }
+
   return (
-    <li className={`card ${props.types[0]}`}> 
+    <li className={`card ${props.types[0]}`}>
       <img
         className="card-image "
         alt={props.name}
@@ -13,7 +20,9 @@ function PokeCard(props) {
         {props.id}. {props.name}
       </h2>
       <p className="card-subtitle">{props.types.join(" | ")}</p>
-      <Button color='blue' >Status</Button>
+      <Button color="blue" onClick={handleClick}>
+        Status
+      </Button>
     </li>
   );
 }
