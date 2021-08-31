@@ -57,9 +57,9 @@ function Status() {
 
   //console.log(pokemonlist);
 
-  useEffect(() => {
-    fillPokemon();
-  }, []);
+  // useEffect(() => {
+  //   fillPokemon();
+  // }, []);
 
   return (
     <div>
