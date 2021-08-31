@@ -1,6 +1,9 @@
 import "./PokeCard.css";
 
 function Topo() {
+
+  console.log('123123444')
+
   return (
     <div className="header">
       <div className="container2">

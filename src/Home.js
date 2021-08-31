@@ -7,7 +7,6 @@ import "./components/PokeCard.css";
 import Botaoload from "./components/Botaoload.jsx";
 import { Gerarhtml } from "./components/Gerarhtml.js";
 import { getType } from "./components/Typeli";
-import Botoes from "./components/Botoes.jsx"
 let PokemonWhatever = [];
 let TypeWhatever = [];
 let PokemonobjL = [];

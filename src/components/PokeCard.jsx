@@ -2,6 +2,7 @@ import "./PokeCard.css";
 import { Button, Input } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 
+
 function PokeCard(props) {
   let history = useHistory();
 

@@ -1,13 +1,30 @@
 import { getPokemon } from "./PokeLi";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Topo from "./Topo";
+import "./Status.css";
+import Pokestatus from "./PokeStatus.jsx";
+import { Gerarstatus } from "./Gerarstatus";
+import { Button, Input } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
+import Botaohome from "./BotaoHome.jsx";
 
 let PokemonWhatever = [];
 
 function Status() {
-  
-    const [pokemonlist, setpokemonlist] = useState([]);
+  const re = /\/\d+/;
+  const re2 = /\//g;
 
-    const handlepokemon = (newPokemon) => {
+  function HeaderView() {
+    const location = useLocation();
+    const StatusId = location.pathname.match(re)[0].replace(re2, "");
+    //console.log(StatusId)
+    return StatusId;
+  }
+
+  const [pokemonlist, setpokemonlist] = useState([]);
+
+  const handlepokemon = (newPokemon) => {
     PokemonWhatever = [...PokemonWhatever, newPokemon];
 
     //console.log(PokemonWhatever);
@@ -15,7 +32,7 @@ function Status() {
     //   return a.id - b.id;
     // });
 
-    //console.log(PokemonWhatever);
+    console.log(PokemonWhatever);
     if (PokemonWhatever.length === 1) {
       setpokemonlist(PokemonWhatever);
     }
@@ -25,27 +42,30 @@ function Status() {
     Array(1)
       .fill()
       .map((_, index) => {
-        const pokemon = getPokemon(3, handlepokemon);
+        const pokemon = getPokemon(HeaderView(), handlepokemon);
         return pokemon;
       });
   }
 
   fillPokemon()
 
-  const tentei = (pokemonlist.map((i) => {
-      const elementTypes = i.types.map((typeInfo) => typeInfo.type.name);
-      return i.name
-  }))
 
-  console.log(tentei)
+  // const tentei = pokemonlist.map((i) => {
+  //   const elementTypes = i.types.map((typeInfo) => typeInfo.type.name);
+  //   return i.sprites.front_default;
+  // });
 
+  //console.log(pokemonlist);
 
-   
-  
+  useEffect(() => {
+    fillPokemon();
+  }, []);
 
   return (
     <div>
-      <p>131313</p>
+      <Topo></Topo>
+      {Gerarstatus(pokemonlist)}
+      <Botaohome></Botaohome>
     </div>
   );
 }
