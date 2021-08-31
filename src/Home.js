@@ -66,7 +66,7 @@ function Home() {
 
       let url = pokemonnseimaisoqpordenome.match(re)[0].replace(re2, "");
 
-      console.log(url);
+      //console.log(url);
       return url;
     });
     PokemonIdL.map((id) => getPokemon(id, handlepokemon));
@@ -75,6 +75,7 @@ function Home() {
   //getType("fire", handletype);
 
   useEffect(() => {
+    PokemonWhatever = []
     fillPokemon();
   }, [Loaded]);
 

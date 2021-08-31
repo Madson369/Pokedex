@@ -11,16 +11,15 @@ import Botaohome from "./BotaoHome.jsx";
 
 let PokemonWhatever = [];
 
-function Status() {
+const Status = () => {
   const re = /\/\d+/;
   const re2 = /\//g;
 
-  function HeaderView() {
+   
     const location = useLocation();
     const StatusId = location.pathname.match(re)[0].replace(re2, "");
     //console.log(StatusId)
-    return StatusId;
-  }
+  
 
   const [pokemonlist, setpokemonlist] = useState([]);
 
@@ -42,24 +41,17 @@ function Status() {
     Array(1)
       .fill()
       .map((_, index) => {
-        const pokemon = getPokemon(HeaderView(), handlepokemon);
+        const pokemon = getPokemon(StatusId, handlepokemon);
         return pokemon;
       });
   }
 
-  fillPokemon()
-
-
-  // const tentei = pokemonlist.map((i) => {
-  //   const elementTypes = i.types.map((typeInfo) => typeInfo.type.name);
-  //   return i.sprites.front_default;
-  // });
-
-  //console.log(pokemonlist);
-
-  // useEffect(() => {
-  //   fillPokemon();
-  // }, []);
+  
+  useEffect(() => {
+    PokemonWhatever = []
+    console.log('rola')
+    fillPokemon();
+  }, [StatusId]);
 
   return (
     <div>
@@ -68,6 +60,6 @@ function Status() {
       <Botaohome></Botaohome>
     </div>
   );
-}
+};
 
 export default Status;
